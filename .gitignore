@@ -31,7 +31,6 @@ msbuild.err
 msbuild.wrn
 
 node_modules/
-webpack/
 
 # Visual Studio 2015
 .vs/
