@@ -30,7 +30,6 @@ msbuild.log
 msbuild.err
 msbuild.wrn
 
-tools/
 node_modules/
 webpack/
 
