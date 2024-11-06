@@ -1,0 +1,117 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+
+<div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+    <div class="d-flex flex-column flex-column-fluid">
+        <div id="kt_app_content" class="app-content">
+            <div class="card">
+                <div class="card-body p-lg-17">
+                    <div class="row mb-3">
+                        <!-- Contact Form Column -->
+                        <div class="col-md-6 pe-lg-10">
+                            @using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { @class = "form mb-15", id = "kt_contact_form" }))
+                            {
+                                @Html.AntiForgeryToken()
+
+                                <h1 class="fw-bold text-gray-900 mb-9">Send Us Email</h1>
+
+                                <div class="row mb-5">
+                                    <div class="col-md-6 fv-row">
+                                        <label class="fs-5 fw-semibold mb-2">Name</label>
+                                        @Html.TextBox("name", null, new { @class = "form-control form-control-solid" })
+                                        @Html.ValidationMessage("name", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-6 fv-row">
+                                        <label class="fs-5 fw-semibold mb-2">Email</label>
+                                        @Html.TextBox("email", null, new { @class = "form-control form-control-solid", type = "email" })
+                                        @Html.ValidationMessage("email", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-column mb-5 fv-row">
+                                    <label class="fs-5 fw-semibold mb-2">Subject</label>
+                                    @Html.TextBox("subject", null, new { @class = "form-control form-control-solid" })
+                                    @Html.ValidationMessage("subject", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="d-flex flex-column mb-10 fv-row">
+                                    <label class="fs-6 fw-semibold mb-2">Message</label>
+                                    @Html.TextArea("message", null, new { @class = "form-control form-control-solid", rows = "6" })
+                                    @Html.ValidationMessage("message", new { @class = "text-danger" })
+                                </div>
+
+                                <button type="submit" class="btn btn-primary" id="kt_contact_submit_button">
+                                    <span class="indicator-label">Send Feedback</span>
+                                    <span class="indicator-progress">
+                                        Please wait...
+                                        <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                                    </span>
+                                </button>
+                            }
+                        </div>
+
+                        <!-- Map Column -->
+                        <div class="col-md-6 ps-lg-10">
+                            <div id="kt_contact_map" class="w-100 rounded mb-2 mb-lg-0 mt-2" style="height: 486px"></div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="row g-5 mb-5 mb-lg-15">
+                        <div class="col-sm-6 pe-lg-10">
+                            <div class="bg-light card-rounded d-flex flex-column flex-center flex-center p-10 h-100">
+                                <i class="ki-outline ki-briefcase fs-3tx text-primary"></i>
+                                <h1 class="text-gray-900 fw-bold my-5">Let's Speak</h1>
+                                <div class="text-gray-700 fw-semibold fs-2">070-1820-0909</div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 ps-lg-10">
+                            <div class="text-center bg-light card-rounded d-flex flex-column flex-center p-10 h-100">
+                                <i class="ki-outline ki-geolocation fs-3tx text-primary"></i>
+                                <h1 class="text-gray-900 fw-bold my-5">Oak Clinic, Sumiyoshi</h1>
+                                <div class="text-gray-700 fs-3 fw-semibold">〒557-0045 2-7-9 Tamade-Nishi, Nishinari-ku, Osaka</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+
+    <script>
+        // Initialize form validation
+        $(document).ready(function () {
+            $("#kt_contact_form").validate({
+                rules: {
+                    name: "required",
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    subject: "required",
+                    message: "required"
+                },
+                messages: {
+                    name: "Please enter your name",
+                    email: {
+                        required: "Please enter your email",
+                        email: "Please enter a valid email address"
+                    },
+                    subject: "Please enter a subject",
+                    message: "Please enter your message"
+                },
+                submitHandler: function (form) {
+                    var button = $("#kt_contact_submit_button");
+                    button.find(".indicator-label").hide();
+                    button.find(".indicator-progress").show();
+                    form.submit();
+                }
+            });
+        });
+    </script>
+}

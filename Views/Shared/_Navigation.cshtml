@@ -1,13 +1,13 @@
 ﻿<!--begin::Menu-->
-<div class="menu menu-rounded menu-column menu-lg-row menu-active-bg menu-title-gray-600 menu-state-gray-900 menu-arrow-gray-500 fw-semibold fw-semibold fs-6 align-items-stretch my-5 my-lg-0 px-2 px-lg-0" id="kt_app_header_menu" data-kt-menu="true">
+<div class="menu menu-rounded menu-column menu-lg-row menu-active-bg menu-state-primary menu-title-gray-700 menu-arrow-gray-400 fw-semibold my-5 my-lg-0 align-items-stretch px-2 px-lg-0" id="kt_app_header_menu" data-kt-menu="true">
     <!-- Home Menu Item -->
     <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
          data-kt-menu-placement="bottom-start"
          data-kt-menu-offset="-400,0"
          class="menu-item @(ViewContext.RouteData.Values["action"]?.ToString() == "Index" ? "here show" : "menu-lg-down-accordion menu-sub-lg-down-indention me-0 me-lg-2")">
-        <a asp-controller="Home" asp-action="Index" class="menu-link">
+        <a asp-controller="Home" asp-action="Index" class="menu-link py-3">
             <span class="menu-icon">
-                <i class="ki-outline ki-home-2"></i>
+                <i class="ki-outline ki-home-2 fs-2"></i>
             </span>
             <span class="menu-title">Home</span>
         </a>
@@ -18,25 +18,25 @@
          data-kt-menu-placement="bottom-start"
          data-kt-menu-offset="-400,0"
          class="menu-item menu-lg-down-accordion menu-sub-lg-down-indention me-0 me-lg-2">
-        <span class="menu-link">
+        <span class="menu-link py-3">
             <span class="menu-icon">
-                <i class="ki-outline ki-category"></i>
+                <i class="ki-outline ki-category fs-2"></i>
             </span>
             <span class="menu-title">Pages</span>
             <span class="menu-arrow d-lg-none"></span>
         </span>
 
         <!-- Menu Sub -->
-        <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown p-0 w-100 w-lg-850px">
-            <div class="menu-state-bg menu-extended overflow-hidden overflow-lg-visible" data-kt-menu-dismiss="true">
-                <div class="row">
+        <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown px-lg-2 py-lg-4 w-lg-850px">
+            <div class="menu-state-bg menu-extended" data-kt-menu-dismiss="true">
+                <div class="row mx-0">
                     <div class="col-lg-8 mb-3 mb-lg-0 py-3 px-3 py-lg-6 px-lg-6">
                         <div class="row">
                             <!-- About Us -->
                             <div class="col-lg-6 mb-3">
                                 <div class="menu-item p-0 m-0">
                                     <a asp-controller="Home" asp-action="About" class="menu-link">
-                                        <span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
+                                        <span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3 bg-light-primary">
                                             <i class="ki-outline ki-briefcase text-primary fs-1"></i>
                                         </span>
                                         <span class="d-flex flex-column">
@@ -50,9 +50,9 @@
                             <!-- Our Team -->
                             <div class="col-lg-6 mb-3">
                                 <div class="menu-item p-0 m-0">
-                                    <a asp-controller="Home" asp-action="Team" class="menu-link">
-                                        <span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
-                                            <i class="ki-outline ki-basket text-danger fs-1"></i>
+                                    <a href="#" class="menu-link">
+                                        <span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3 bg-light-danger">
+                                            <i class="ki-outline ki-profile-circle text-danger fs-1"></i>
                                         </span>
                                         <span class="d-flex flex-column">
                                             <span class="fs-6 fw-bold text-gray-800">Our Team</span>
@@ -62,11 +62,12 @@
                                 </div>
                             </div>
 
+
                             <!-- FAQ -->
                             <div class="col-lg-6 mb-3">
                                 <div class="menu-item p-0 m-0">
                                     <a asp-controller="Home" asp-action="FAQ" class="menu-link">
-                                        <span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
+                                        <span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3 bg-light-info">
                                             <i class="ki-outline ki-information-3 text-info fs-1"></i>
                                         </span>
                                         <span class="d-flex flex-column">
@@ -81,7 +82,7 @@
                             <div class="col-lg-6 mb-3">
                                 <div class="menu-item p-0 m-0">
                                     <a asp-controller="Home" asp-action="Contact" class="menu-link">
-                                        <span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
+                                        <span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3 bg-light-success">
                                             <i class="ki-outline ki-message-question text-success fs-1"></i>
                                         </span>
                                         <span class="d-flex flex-column">
@@ -99,9 +100,10 @@
                         <h4 class="fs-6 fs-lg-4 text-gray-800 fw-bold mt-3 mb-3 ms-4">Links</h4>
                         <div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
                             <div class="d-flex flex-column me-5">
-                                <div class="fs-6 fw-bold text-gray-800">Website</div>
+                                <div class="fs-6 fw-bold text-gray-800">Main Website</div>
+                                <div class="fs-7 fw-semibold text-muted">Oak Clinic Website</div>
                             </div>
-                            <a href="https://your-website.com" class="btn btn-sm btn-primary fw-bold" target="_blank">Go</a>
+                            <a href="https://www.oakclinic-group.com/" class="btn btn-sm btn-primary fw-bold" target="_blank">Visit</a>
                         </div>
                     </div>
                 </div>
@@ -114,18 +116,18 @@
          data-kt-menu-placement="bottom-start"
          data-kt-menu-offset="22,0"
          class="menu-item menu-lg-down-accordion menu-sub-lg-down-indention me-0 me-lg-2">
-        <span class="menu-link">
+        <span class="menu-link py-3">
             <span class="menu-icon">
-                <i class="ki-outline ki-abstract-26"></i>
+                <i class="ki-outline ki-abstract-26 fs-2"></i>
             </span>
             <span class="menu-title">Apps</span>
             <span class="menu-arrow d-lg-none"></span>
         </span>
 
-        <!-- Menu Sub -->
-        <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown px-lg-2 py-lg-4 w-lg-200px">
+        <!-- Apps Submenu -->
+        <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown px-lg-2 py-lg-4 w-lg-250px">
             <div class="menu-item">
-                <a asp-controller="Apps" asp-action="GeneticAnalysis" class="menu-link">
+                <a asp-controller="Apps" asp-action="GeneticAnalysis" class="menu-link py-3">
                     <span class="menu-icon">
                         <i class="ki-outline ki-profile-user fs-2"></i>
                     </span>
@@ -133,14 +135,14 @@
                 </a>
             </div>
             <div class="menu-item">
-                <a asp-controller="Apps" asp-action="PrenatalAnalysis" class="menu-link">
+                <a asp-controller="Apps" asp-action="PrenatalAnalysis" class="menu-link py-3">
                     <span class="menu-icon">
                         <i class="ki-outline ki-pulse fs-2"></i>
                     </span>
                     <span class="menu-title">Prenatal Analysis</span>
                 </a>
             </div>
-            <!-- Add more menu items similar to your original -->
+            <!-- Add more app menu items as needed -->
         </div>
     </div>
 </div>
